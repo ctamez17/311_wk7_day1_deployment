@@ -1,4 +1,5 @@
 const mysql = require('mysql')
+require('dotenv').config();
 
 class Connection {
   constructor() {
@@ -7,9 +8,9 @@ class Connection {
 
       const config = {
         connectionLimit: 100,
-        host: 'localhost',
+        host: '34.71.168.140', //same host as first-instance / reused
         user: 'root',
-        password: 'password',
+        password: process.env.DB_PASSWORD,
         database: 'admin'
       }
 
